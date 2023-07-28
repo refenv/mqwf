@@ -22,7 +22,7 @@ jobs:
         hostname
 
   slow:
-    if: contains(github.ref_name, 'gh-readonly-queue')
+    if: contains(github.event_name, 'merge_group')
     runs-on: ubuntu-latest
 
     steps:
@@ -32,7 +32,7 @@ jobs:
         hostname
 
   slow2:
-    if: contains(github.ref_name, 'gh-readonly-queue-foo')
+    if: contains(github.event_name, 'merge_group')
     runs-on: ubuntu-latest
 
     steps:
